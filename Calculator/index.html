@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="buttons">
+        <div>
+            <input type="text" id="Input">
+        </div>
+        <div>
+            <button onclick="Clear()" class="button">AC</button>
+            <button onclick="Delete()"  class="button">Del</button>
+            <button id="Memory" >M</button>
+            <button onclick="displayInput('%')"   class="button">%</button>
+        </div>
+        <div>
+            <button onclick="displayInput('7')"  class="button">7</button>
+            <button onclick="displayInput('8')"  class="button">8</button>
+            <button onclick="displayInput('9')"  class="button">9</button>
+            <button onclick="displayInput('*')"  class="button">*</button>
+        </div>
+        <div>
+            <button onclick="displayInput('4')"   class="button">4</button>
+            <button onclick="displayInput('5')"   class="button">5</button>
+            <button onclick="displayInput('6')"   class="button">6</button>
+            <button onclick="displayInput('-')"   class="button">-</button>
+        </div>
+        <div>
+            <button onclick="displayInput('1')"   class="button">1</button>
+            <button onclick="displayInput('2')"   class="button">2</button>
+            <button onclick="displayInput('3')"   class="button">3</button>
+            <button onclick="displayInput('+')"   class="button">+</button>
+        </div>
+        <div>
+            <button onclick="displayInput('0')"   class="button">0</button>
+            <button onclick="displayInput('.')"   class="button">.</button>
+            <button onclick="displayInput('/')"   class="button">/</button>
+            <button onclick="Operator()"  class="button">=</button>
+        </div>
+        <div>
+            <button onclick="memoryClear()" class="button">MC</button>
+        </div>
+    </div>
+</body>
+<script src="cal.js">
+
+</script>
+</html>

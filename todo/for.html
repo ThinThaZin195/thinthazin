@@ -1,0 +1,64 @@
+<script>
+  function render(t) {
+    let medium = calcMedium(t);
+
+    let spaceCount = 0;
+
+    for (let r = 0; r < t; r++) {
+      let starCount = calcStarCount(t, r, medium);
+
+      spaceCount = t - starCount;
+
+      console.log(renderRow(starCount, spaceCount));
+    }
+  }
+
+  function calcStarCount(t, r, medium) {
+    let starCount = 0;
+
+    if (r < medium) {
+      starCount = t - (t - (r + 1)) + r;
+    } else {
+      starCount = t - r + (t - (r + 1));
+    }
+
+    return starCount;
+  }
+
+  function renderRow(starCount, spaceCount) {
+    let text = "";
+
+    let sideSpaceCount = spaceCount / 2;
+
+    let medium = calcMedium(spaceCount);
+
+    if (spaceCount == 0 && starCount) {
+      for (let j = 0; j < starCount; j++) {
+        text += "*";
+      }
+    } else {
+      for (let i = 0; i < spaceCount; i++) {
+        if (i === medium) {
+          for (let j = 0; j < starCount; j++) {
+            text += "*";
+          }
+        }
+        text += " ";
+      }
+    }
+
+    return text;
+  }
+
+  function calcMedium(t) {
+    return isOdd(t) ? (t + 1) / 2 : t / 2;
+  }
+
+  function isOdd(value) {
+    return value % 2 === 0 ? false : true;
+  }
+
+  render(3);
+  render(9);
+  render(21);
+</script>

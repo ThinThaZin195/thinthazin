@@ -1,0 +1,85 @@
+<div>
+  <div>
+    <input id="Input" />
+  </div>
+  <div>
+    <button class="btn-num">1</button>
+    <button class="btn-num">2</button>
+    <button class="btn-num">3</button>
+    <button class="btn-num">4</button>
+  </div>
+  <div>
+    <button class="btn-num">5</button>
+    <button class="btn-num">6</button>
+    <button class="btn-num">7</button>
+    <button class="btn-num">8</button>
+  </div>
+  <div>
+    <button class="btn-num">9</button>
+    <button class="btn-num">0</button>
+    <button class="btn-op">+</button>
+    <button class="btn-op">-</button>
+  </div>
+  <div>
+    <button class="btn-op">*</button>
+    <button class="btn-op">%</button>
+    <button class="btn-AC">AC</button>
+    <button id="result">=</button>
+  </div>
+</div>
+<script>
+  let input = document.getElementById("Input");
+
+  let InputArr = [5,5, "+", 2, "+", 3];
+
+  function result() {
+    let index = 0;
+    while (index < InputArr.length - 2) {
+      let number_1 = InputArr[index];
+      let operator = InputArr[index + 1];
+      let number_2 = InputArr[index + 2];
+      let calculation;
+      switch (operator) {
+        case "+":
+          calculation = plus(number_1, number_2);
+          break;
+        case "-":
+          calculation = minus(number_1, number_2);
+          break;
+        case "*":
+          calculation = multi(number_1, number_2);
+          break;
+        case "/":
+          if (number_2 === 0) {
+            console.error("Division by zero is not allowed.");
+            return;
+          }
+          calculation = divi(number_1, number_2);
+          break;
+        default:
+          console.error("Invalid operator:", operator);
+          return;
+      }
+      InputArr.splice(index, 3, calculation);
+    }
+    return InputArr;
+  }
+  console.log(InputArr)
+  console.log(result())
+
+  function plus(x, y) {
+    return x + y;
+  }
+
+  function minus(x, y) {
+    return x - y;
+  }
+
+  function multi(x, y) {
+    return x * y;
+  }
+
+  function divi(x, y) {
+    return x / y;
+  }
+</script>

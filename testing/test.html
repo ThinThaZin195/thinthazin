@@ -1,0 +1,139 @@
+<script>
+  let num = 3;
+  console.log(num);
+
+  function div(a, b) {
+    return a / b;
+  }
+  console.log(div(6, 3));
+
+  //Student
+
+  let mark = [40, 30, 19.5, 40, 20,18];
+
+  for (i = 0; i < mark.length; i++) {
+    if (mark[i] >= 25 && mark[i] <= 35) {
+      console.log("Pass");
+    } else if (mark[i] > 35) {
+      console.log("D");
+    } else {
+      console.log("Failed");
+    }
+  }
+
+  let arrmap = mark.map((item,index) => {
+    return item *2
+  });
+  console.log(arrmap);
+
+  const arrmap1= mark.filter((item)=> item >= 20)
+  console.log(arrmap1)
+
+  const arrmap2= mark.find((item)=> item<20)
+  console.log(arrmap2)
+
+  const arrmap3= mark.findIndex((item)=> item<20)
+  console.log(arrmap3)
+
+  const arrmap4= mark.findLast((item)=>item<20)
+  console.log(arrmap4)
+  
+  const arrmap5 = mark.findLastIndex((item)=> item<20)
+  console.log(arrmap5)
+
+  mark.forEach((item , index)=>console.log(item,index))
+
+  console.log(mark.includes(20))
+
+  console.log(mark.join("-"))
+
+  console.log(mark.pop())
+
+  console.log(mark.push())
+
+
+    const fruits= ["CoCoNut", "Pineapple"]
+    const vegetable= ["Cabbage", "Radish"]
+    console.log(fruits)
+
+    //fruits.push(...vegetable)
+    let mix=fruits.concat(vegetable)
+    console.log(mix)
+
+  let number = [20,10,60,40]
+  
+  const reducing = number.reduce((items)=> items)
+  console.log(reducing)
+
+  //const Reversing = number.reverse()
+  //console.log(Reversing)
+
+  //console.log(number.shift())
+   number.unshift("90")
+  console.log(number)
+
+  const even= (items)=>items % 2== 0 
+  console.log(number.some(even)
+  ) 
+
+  number.sort()
+  console.log(number)
+
+  const Days= ["Sunday", "Friday"]
+  Days.splice(0,1,"Thursday")
+  console.log(Days)
+
+  Days.splice(2,0,"Saturday")
+  console.log(Days)
+
+  let Counts = [2,4,5,3]
+  const iterator =Counts.values()
+  for ( const items of iterator){
+    console.log(items)
+  }
+  
+
+  const WithMe= Counts.with(3,35).map((item)=>item*10)
+  console.log(WithMe)
+
+  const IsEven= ((items)=>items %2==0 )
+  const EveryUsecase= Counts.every(IsEven)
+  console.log(EveryUsecase)
+
+  let arr = ["Hello","Hi","Morning"]
+
+  const FillUsecase = arr.fill("How are you?", 0 ,5)
+  console.log(FillUsecase)
+
+
+  const arr1 = [1,2,[2,3],[3,4]]
+  const arr2= arr1.flat()
+  console.log(arr2)
+
+  const arr3= [2,[3,[5,[6]]]]
+  const flatUsecase = arr3.flat(3)
+  console.log(flatUsecase)
+
+  const arr4=[1,4,5,4,6]
+  const arr5 = arr4.toString();    
+  console.log(arr5)
+
+  const arr6 = arr4.toLocaleString();
+  console.log(arr6)
+
+  const arr7 = arr4.toReversed()
+  console.log(arr7)
+
+  const arr8 = arr4.toSorted()
+  console.log(arr8)
+
+  const arr9 = arr4.toSpliced(2,1,90)
+  console.log(arr9)
+
+  
+
+  
+
+
+
+</script>
